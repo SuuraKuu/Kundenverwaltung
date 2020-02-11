@@ -3,7 +3,7 @@ package net.monternos.kundenverwaltung;
 public class Kundenverwaltung {
 	private String hello;
 	
-	public Kundenverwaltung(String hello) {
+	public Kundenverwaltung(final String hello) {
 		this.hello = hello;
 	}
 	
