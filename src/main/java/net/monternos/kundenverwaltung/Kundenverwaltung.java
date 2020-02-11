@@ -1,9 +1,13 @@
 package net.monternos.kundenverwaltung;
 
 public class Kundenverwaltung {
-
-	public static void main(String[] args) {
-		System.out.println(args);
+	private String hello;
+	
+	public Kundenverwaltung(String hello) {
+		this.hello = hello;
 	}
 	
+	public String getHello() {
+		return hello;
+	}
 }
