@@ -2,57 +2,51 @@ package net.monternos.kundenverwaltung;
 
 public class Kundeneintrag extends Datenelement {
 
-  private String vorname;
-  private String nachname;
+  private short kundennummer;
+  private Person person;
 
-  public Kundeneintrag(final String vorname, final String nachname) {
-    this.vorname = vorname;
-    this.nachname = nachname;
+  public Kundeneintrag(final short kundennummer, final Person person) {
+    this.kundennummer = kundennummer;
+    this.person = person;
   }
 
-  public String getVorname() {
-    return vorname;
+  public short getKundennummer() {
+    return kundennummer;
   }
 
-  public void setVorname(String vorname) {
-    this.vorname = vorname;
+  public void setKundennummer(final short kundennummer) {
+    this.kundennummer = kundennummer;
   }
 
-  public String getNachname() {
-    return nachname;
+  public Person getPerson() {
+    return person;
   }
 
-  public void setNachname(String nachname) {
-    this.nachname = nachname;
+  public void setPerson(final Person person) {
+    this.person = person;
   }
 
   public void informationAusgeben() {
-    if (vorname == null || nachname == null) {
+    if (kundennummer == -1 || person == null) {
       System.out.println("Dieser Teil ist leer.");
     } else {
-      System.out.println("Knoteninhalt ist " + vorname + ": " + nachname);
+      System.out.println("Knoteninhalt ist " + person + ": " + kundennummer);
     }
   }
 
-  public boolean schluesselIstGroesserAls(String searchKey) {
-    int e = this.vorname.compareTo(searchKey);
-    return e >= 0;
+  public boolean schluesselIstGroesserAls(final short searchKey) {
+    return searchKey > kundennummer;
   }
 
-  public boolean schluesselIstGleich(String searchKey) {
-    int ergebnis = this.vorname.compareTo(searchKey);
-    return ergebnis == 0;
+  public boolean schluesselIstGleich(final short searchKey) {
+    return searchKey == kundennummer;
   }
 
-  public boolean istGroesserAls(Datenelement datenelement) {
-    int ergebnis = this.vorname.compareTo(((Kundeneintrag) datenelement).vorname);
-
-    return ergebnis > 0;
+  public boolean istGroesserAls(final Datenelement datenelement) {
+    return ((Kundeneintrag) datenelement).getKundennummer() > kundennummer;
   }
 
-  public boolean istGleich(Datenelement datenelement) {
-    int ergebnis = this.vorname.compareTo(((Kundeneintrag) datenelement).vorname);
-
-    return ergebnis == 0;
+  public boolean istGleich(final Datenelement datenelement) {
+    return ((Kundeneintrag) datenelement).getKundennummer() == kundennummer;
   }
 }
