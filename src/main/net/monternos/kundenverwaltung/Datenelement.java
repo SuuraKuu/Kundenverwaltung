@@ -27,7 +27,7 @@ abstract class Datenelement {
    * @param searchKey
    * @return
    */
-  public abstract boolean schluesselIstGroesserAls(final String searchKey);
+  public abstract boolean schluesselIstGroesserAls(final short searchKey);
 
   /**
    * checks if the key is the same as the current key
@@ -35,5 +35,5 @@ abstract class Datenelement {
    * @param searchKey
    * @return
    */
-  public abstract boolean schluesselIstGleich(final String searchKey);
+  public abstract boolean schluesselIstGleich(final short searchKey);
 }

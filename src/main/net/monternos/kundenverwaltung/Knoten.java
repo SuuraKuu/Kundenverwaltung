@@ -12,7 +12,7 @@ public class Knoten {
     this.rechterNachfolger = null;
   }
 
-  public Datenelement suchen(final String searchKey) {
+  public Datenelement suchen(final byte searchKey) {
     if (this.daten.schluesselIstGleich(searchKey)) {
       return this.daten;
 

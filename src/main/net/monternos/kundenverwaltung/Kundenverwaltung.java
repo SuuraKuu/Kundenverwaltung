@@ -7,7 +7,7 @@ public class Kundenverwaltung {
     wurzel = null;
   }
 
-  public Datenelement suchen(final String searchKey) {
+  public Datenelement suchen(final byte searchKey) {
     if (wurzel != null) {
       return wurzel.suchen(searchKey);
     }
