@@ -1,6 +1,6 @@
 package net.monternos.kundenverwaltung;
 
-public class Kundeneintrag extends Datenelement {
+public class Kundeneintrag implements Datenelement {
 
   private short kundennummer;
   private Person person;
