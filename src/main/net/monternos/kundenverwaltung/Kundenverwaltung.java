@@ -8,10 +8,16 @@ public class Kundenverwaltung {
   }
 
   public Datenelement suchen(final byte searchKey) {
+    Datenelement data = null;
     if (wurzel != null) {
-      return wurzel.suchen(searchKey);
+      data = wurzel.suchen(searchKey);
     }
-    return null;
+
+    if (data == null) {
+      throw new ElementNotFoundException("The requested element was not found in the binary tree.");
+    } else {
+      return data;
+    }
   }
 
   public void eintragen(final Datenelement datenelement) {
