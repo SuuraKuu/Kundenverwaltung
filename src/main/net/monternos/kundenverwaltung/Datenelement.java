@@ -1,9 +1,9 @@
 package net.monternos.kundenverwaltung;
 
-abstract class Datenelement {
+public interface Datenelement {
 
-  /** gibt die informationen des Datenelemented aus */
-  public abstract void informationAusgeben();
+  /** logs information of the current Datenelement */
+  void informationAusgeben();
 
   /**
    * checks if the datenelement is equal to the current datenelement
@@ -11,7 +11,7 @@ abstract class Datenelement {
    * @param datenelement
    * @return
    */
-  public abstract boolean istGleich(final Datenelement datenelement);
+  boolean istGleich(final Datenelement datenelement);
 
   /**
    * checks if the datenelement is bigger or smaller than the current datenelement
@@ -19,7 +19,7 @@ abstract class Datenelement {
    * @param datenelement
    * @return
    */
-  public abstract boolean istGroesserAls(final Datenelement datenelement);
+  boolean istGroesserAls(final Datenelement datenelement);
 
   /**
    * checks if the key is bigger than the current key
@@ -27,7 +27,7 @@ abstract class Datenelement {
    * @param searchKey
    * @return
    */
-  public abstract boolean schluesselIstGroesserAls(final short searchKey);
+  boolean schluesselIstGroesserAls(final short searchKey);
 
   /**
    * checks if the key is the same as the current key
@@ -35,5 +35,5 @@ abstract class Datenelement {
    * @param searchKey
    * @return
    */
-  public abstract boolean schluesselIstGleich(final short searchKey);
+  boolean schluesselIstGleich(final short searchKey);
 }
